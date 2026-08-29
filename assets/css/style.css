@@ -14,15 +14,25 @@
   --hair:     #dcdcdc;
   --wash:     #f6f6f6;
 
-  --ui:   "Libre Franklin", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --ui:   "Libre Franklin", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; /* English font */
   --read: "Source Serif 4", Georgia, "Times New Roman", serif;
   --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+   
+  --cn: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
 
   --rail: 132px;
   --gap:  40px;
   --max:  940px;
 
   color-scheme: light;
+}
+
+.intro h1 .cn {
+  font-family: var(--cn);
+  font-weight: 400;
+  color: var(--muted);
+  font-size: 0.72em;
+  margin-left: 6px;
 }
 
 * { box-sizing: border-box; }
