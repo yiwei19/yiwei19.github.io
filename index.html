@@ -50,44 +50,31 @@
   ul.news .date { color: var(--muted); font-variant-numeric: tabular-nums; margin-right: 6px; }
 
   /* Publications */
-  .pub { display: flex; gap: 24px; margin-top: 24px; align-items: flex-start; flex-wrap: wrap; }
+  .pub { display: flex; gap: 24px; margin-top: 26px; align-items: flex-start; flex-wrap: wrap; }
   .pub .media {
-    width: 240px; flex-shrink: 0; border-radius: 6px; overflow: hidden; background: var(--accent-bg);
+    width: 280px; flex-shrink: 0; border-radius: 6px; overflow: hidden; background: var(--accent-bg);
   }
   .pub .media img, .pub .media video { width: 100%; display: block; }
+  .media-placeholder {
+    width: 100%; aspect-ratio: 16/10; display: flex; align-items: center; justify-content: center;
+    color: var(--muted); font-size: 13px; text-align: center; padding: 12px; line-height: 1.5;
+  }
   .pub .entry { flex: 1; min-width: 300px; }
   .pub .title { font-weight: 600; font-size: 16.5px; margin-bottom: 3px; }
   .pub .authors { font-size: 14.5px; margin-bottom: 2px; }
   .pub .authors .me { font-weight: 700; }
-  .pub .venue { color: var(--muted); font-size: 14px; margin-bottom: 6px; font-style: italic; }
-  .pub .summary { font-size: 14.5px; margin: 0 0 8px; }
-  .pub .plinks { font-size: 14px; }
-  .pub .plinks span.sep { color: var(--rule); margin: 0 3px; }
-  details.bib { margin-top: 8px; font-size: 13.5px; }
+  .pub .venue { color: var(--muted); font-size: 14px; margin-bottom: 8px; font-style: italic; }
+  .pub p { font-size: 14.5px; margin: 0 0 8px; }
+  .pub .contrib { border-left: 2px solid var(--rule); padding-left: 12px; }
+  .pub .contrib b { font-weight: 600; }
+  .pub .plinks { font-size: 14px; margin-top: 8px; }
+  .pub .plinks .sep { color: #c8c8c8; margin: 0 5px; }
+  details.bib { margin-top: 8px; }
   details.bib summary { cursor: pointer; color: var(--link); font-size: 14px; }
   details.bib pre {
     background: var(--accent-bg); border-radius: 6px; padding: 12px; overflow-x: auto;
     font-size: 12.5px; line-height: 1.5; margin: 8px 0 0;
   }
-
-  /* Project rows */
-  .project { display: flex; gap: 24px; margin-top: 28px; align-items: flex-start; flex-wrap: wrap; }
-  .project .media {
-    width: 280px; flex-shrink: 0; border-radius: 6px; overflow: hidden; background: var(--accent-bg);
-  }
-  .project .media video, .project .media img { width: 100%; display: block; }
-  .media-placeholder {
-    width: 100%; aspect-ratio: 16/10; display: flex; align-items: center; justify-content: center;
-    color: var(--muted); font-size: 13px; text-align: center; padding: 12px;
-  }
-  .project .desc { flex: 1; min-width: 300px; }
-  .project h3 { margin: 0 0 4px; font-size: 16.5px; }
-  .project .meta { color: var(--muted); font-size: 14px; margin-bottom: 8px; }
-  .project .meta .status { color: #8a6d1a; font-weight: 600; }
-  .project p { margin: 0 0 8px; font-size: 14.5px; }
-  .project .tags { font-size: 13px; color: var(--muted); }
-  .project .plinks { font-size: 14px; margin-top: 6px; }
-  .project .plinks span { color: var(--muted); }
 
   /* Experience */
   .exp { margin-top: 16px; }
@@ -99,7 +86,7 @@
   footer { margin-top: 60px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--rule); padding-top: 16px; }
   @media (max-width: 640px) {
     .header { gap: 20px; }
-    .project .media, .pub .media { width: 100%; }
+    .pub .media { width: 100%; }
   }
 </style>
 </head>
@@ -141,16 +128,19 @@
   <h2>Publications</h2>
 
   <div class="pub">
-    <div class="media">
-      <!-- Optional: drop a teaser figure at assets/meanflow_teaser.png -->
-      <img src="assets/meanflow_teaser.png" alt="Lie Group-Constrained MeanFlow teaser"
-           onerror="this.outerHTML='<div class=&quot;media-placeholder&quot;>teaser figure<br>(assets/meanflow_teaser.png)</div>'">
+    <div class="media" id="pub1-media">
+      <!-- Preferred: assets/franka_grasp_demo.mp4 · falls back to assets/meanflow_teaser.png -->
+      <video id="pub1-video" autoplay muted loop playsinline controls src="assets/franka_grasp_demo.mp4"></video>
     </div>
     <div class="entry">
-      <div class="title">Fast Generative Grasping via Lie Group-Constrained MeanFlow</div>
+      <div class="title"><a href="https://arxiv.org/abs/2608.26076">Fast Generative Grasping via Lie Group-Constrained MeanFlow</a></div>
       <div class="authors">S. Talha Bukhari, <span class="me">Yi Wei</span>, Ruiqi Ni, Zachary Kingston, Aniket Bera</div>
       <div class="venue">arXiv preprint arXiv:2608.26076, August 2026</div>
-      <p class="summary">Grasp synthesis is multimodal by nature, which makes generative models a good fit — but their iterative sampling is too slow for time-critical robot control. We formulate MeanFlow on the product Lie group SO(3)&nbsp;&times;&nbsp;&#8477;<sup>3</sup>, coupling an algebraic semigroup consistency condition with Riemannian Conditional Flow Matching. The resulting model samples reliable grasps in <b>&le;&nbsp;5 network evaluations</b>, matching state-of-the-art diffusion and flow-based grasp generators on ACRONYM at millisecond-scale latency (up to <b>39&times; speed-up</b>), and transfers directly to real-world grasping with no additional training or domain adaptation.</p>
+
+      <p>Grasp synthesis is multimodal by nature — a good grasp is a distribution, not a point estimate — which makes generative models a natural fit, but their iterative sampling is too slow for time-critical robot control. We formulate MeanFlow on the product Lie group SO(3)&nbsp;&times;&nbsp;&#8477;<sup>3</sup>, coupling an algebraic semigroup consistency condition with Riemannian Conditional Flow Matching so that the average velocity stays anchored to the data distribution. The model samples reliable grasps in <b>&le;&nbsp;5 network evaluations</b>, matching state-of-the-art diffusion and flow-based grasp generators on ACRONYM at millisecond-scale latency (up to <b>39&times; speed-up</b>), and transfers directly to real-world grasping with no additional training or domain adaptation.</p>
+
+      <p class="contrib"><b>My contribution:</b> I owned the real-robot side — turning the model into a working stack on a physical Franka R3. I built the calibrated eye-in-hand RGB-D pipeline with an Orbbec Femto wrist camera, diagnosed and fixed a ~30&nbsp;mm hand-eye error caused by a frame-convention mismatch, designed a shared-correction multi-view ICP that cut validation alignment error from 11.6&nbsp;mm to 10.2&nbsp;mm, wrote the adapter mapping generated SE(3) grasps into the robot frame, and integrated collision-aware VAMP planning — validating end-to-end execution to roughly 1&nbsp;mm / 0.13&deg;.</p>
+
       <div class="plinks">
         <a href="https://arxiv.org/abs/2608.26076">arXiv</a><span class="sep">|</span><a href="https://arxiv.org/pdf/2608.26076">PDF</a>
       </div>
@@ -167,56 +157,27 @@
     </div>
   </div>
 
-  <!-- ======================= PROJECTS ======================= -->
-  <h2>Research &amp; Projects</h2>
-
-  <!-- ============ Project 1: Franka real-robot deployment ============ -->
-  <div class="project">
+  <!-- ============ Template for the next paper — copy, uncomment, fill in ============
+  <div class="pub">
     <div class="media">
-      <!-- Drop your demo video at assets/franka_grasp_demo.mp4 -->
-      <video controls muted loop playsinline src="assets/franka_grasp_demo.mp4"
-             onerror="this.outerHTML='<div class=&quot;media-placeholder&quot;>demo video<br>(assets/franka_grasp_demo.mp4)</div>'"></video>
+      <img src="assets/paper2_teaser.png" alt="teaser">
     </div>
-    <div class="desc">
-      <h3>Real-Robot Deployment of SE(3) Generative Grasping</h3>
-      <div class="meta">Purdue CoMMA Lab &middot; 2026 &middot; real-robot results in <a href="https://arxiv.org/abs/2608.26076">arXiv:2608.26076</a></div>
-      <p>I led the hardware side of the paper above: turning a grasp generation model into a working stack on a physical Franka R3. That meant calibrated eye-in-hand RGB-D perception with an Orbbec Femto wrist camera, hand-eye-aware multi-view fusion, language-prompted segmentation (LangSAM/SAM2), collision-aware VAMP planning, and execution on real hardware.</p>
-      <p>Concretely: diagnosed and fixed a ~30&nbsp;mm hand-eye error caused by a frame-convention mismatch; designed a shared-correction multi-view ICP that cut validation alignment error from 11.6&nbsp;mm to 10.2&nbsp;mm; built the adapter mapping generated SE(3) grasps into the robot frame; and validated end-to-end execution to roughly 1&nbsp;mm / 0.13&deg;.</p>
-      <div class="tags">SE(3) &middot; flow matching &middot; hand-eye calibration &middot; multi-view ICP &middot; VAMP &middot; real-robot deployment</div>
-      <div class="plinks"><span>demo video available upon request</span></div>
+    <div class="entry">
+      <div class="title"><a href="#">Paper Title</a></div>
+      <div class="authors"><span class="me">Yi Wei</span>, Coauthor</div>
+      <div class="venue">Venue, Year</div>
+      <p>What the paper is about.</p>
+      <p class="contrib"><b>My contribution:</b> ...</p>
+      <div class="plinks"><a href="#">arXiv</a><span class="sep">|</span><a href="#">code</a></div>
     </div>
   </div>
-
-  <!-- ============ Add a new project here ============ -->
-  <!-- Template — copy, uncomment, and fill in
-  <div class="project">
-    <div class="media">
-      <video controls muted loop playsinline src="assets/new_demo.mp4"
-             onerror="this.outerHTML='<div class=&quot;media-placeholder&quot;>demo / figure</div>'"></video>
-    </div>
-    <div class="desc">
-      <h3>Project Title</h3>
-      <div class="meta">Purdue CoMMA Lab &middot; 2026 &middot; <span class="status">in progress</span></div>
-      <p>Description.</p>
-      <div class="tags">tag &middot; tag</div>
-    </div>
-  </div>
-  -->
-
-  <!-- ======================= EARLIER PROJECTS ======================= -->
-  <h2>Earlier Projects</h2>
-  <div class="exp">
-    <div class="row"><span class="role">Language-Conditioned Diffusion Policy for Long-Horizon Manipulation</span><span class="time">2025</span></div>
-    <p class="detail">CLIP-conditioned 1D temporal U-Net diffusion policy on Calvin ABCD; +18% single-task success over MSE behavior cloning; GPU-parallel evaluation in Isaac Gym (512 environments).</p>
-    <div class="row"><span class="role">Zero-Shot Robotic Planning with Foundation Models</span><span class="time">2025</span></div>
-    <p class="detail">GPT-4 task decomposition + SAM segmentation + CLIP semantic grounding + depth-based 3D localization for tabletop pick-and-place in PyBullet; 70&ndash;80% open-vocabulary object retrieval.</p>
-  </div>
+  ============================================================================= -->
 
   <!-- ======================= EXPERIENCE ======================= -->
   <h2>Experience</h2>
   <div class="exp">
-    <div class="row"><span class="role">Undergraduate Researcher &mdash; Computational Motion, Manipulation, and Autonomy (CoMMA) Lab, Purdue</span><span class="time">2026&ndash;present</span></div>
-    <p class="detail">Generative grasping on SE(3), real-robot deployment on a Franka R3, and model-based reinforcement learning.</p>
+    <div class="row"><span class="role">Undergraduate Researcher &mdash; CoMMA Lab, Purdue University</span><span class="time">2026&ndash;present</span></div>
+    <p class="detail">Generative grasping on SE(3), real-robot deployment on a Franka R3, and model-based reinforcement learning. Advised by Prof. Zachary Kingston.</p>
     <!-- Add more experiences here -->
   </div>
 
@@ -224,5 +185,31 @@
     Last updated August 2026 &middot; Built with plain HTML &mdash; no framework needed.
   </footer>
 </div>
+
+<script>
+// Publication thumbnail fallback: demo video -> teaser figure -> placeholder.
+(function () {
+  var box = document.getElementById('pub1-media');
+  var vid = document.getElementById('pub1-video');
+  if (!box || !vid) return;
+  var done = false;
+  function placeholder() {
+    box.innerHTML = '<div class="media-placeholder">demo video<br>(assets/franka_grasp_demo.mp4)<br><br>or teaser figure<br>(assets/meanflow_teaser.png)</div>';
+  }
+  function fallback() {
+    if (done) return;
+    done = true;
+    var probe = new Image();
+    probe.onload = function () {
+      box.innerHTML = '<img src="assets/meanflow_teaser.png" alt="Lie Group-Constrained MeanFlow teaser">';
+    };
+    probe.onerror = placeholder;
+    probe.src = 'assets/meanflow_teaser.png';
+  }
+  vid.addEventListener('error', fallback, true);
+  vid.addEventListener('loadeddata', function () { done = true; });
+  setTimeout(function () { if (vid.readyState === 0) fallback(); }, 1500);
+})();
+</script>
 </body>
 </html>
