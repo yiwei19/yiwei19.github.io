@@ -1,4 +1,4 @@
-{%- assign p = site.data.profile -%}
+{%- assign p = site.data.bio -%}
 <section class="intro">
   <div class="portrait">
     {% if p.photo %}<img src="{{ p.photo | relative_url }}" alt="{{ p.photo_alt | default: p.name }}">{% endif %}

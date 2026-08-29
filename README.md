@@ -14,7 +14,7 @@ push 上去 1–2 分钟后自动生效。
 
 | 板块 | 改哪个文件 |
 |---|---|
-| 头像 / 姓名 / 联系方式 / 自我介绍 | `_data/profile.yml` |
+| 头像 / 姓名 / 联系方式 / 自我介绍 | `_data/bio.yml` |
 | News | `_data/news.yml` |
 | Publications | `_data/publications.yml` |
 | Projects | `_data/projects.yml` |
@@ -50,11 +50,11 @@ git commit -m "写清楚改了什么"
 git push
 ```
 
-排错见 [docs/10-deploy.md](docs/10-deploy.md)。
+排错见 [docs/deploy.md](docs/deploy.md)。
 
 ## 待办
 
-- [ ] 补 `assets/Yi_Wei_CV.pdf`，然后在 `_data/profile.yml` 里取消注释 CV 链接
+- [ ] 补 `assets/Yi_Wei_CV.pdf`，然后在 `_data/bio.yml` 里取消注释 CV 链接
 - [ ] 删掉示例博客文章 `_posts/2026-08-29-how-this-blog-works.md`，换成真的第一篇
 - [ ] model-based RL / 约束搜索空间方向有产出后，填 `_data/projects.yml`
 - [ ] 简历页眉加一行网站地址

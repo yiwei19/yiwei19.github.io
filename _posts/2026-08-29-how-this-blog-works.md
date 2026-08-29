@@ -13,7 +13,7 @@ Create a file in `_posts/` named `YYYY-MM-DD-some-slug.md`. The date in the file
 is what orders the blog; the `title` in the front matter is what people see. Push, wait
 a minute or two, and it appears at the top of the list.
 
-Full instructions are in `docs/09-blog.md`.
+Full instructions are in `docs/blog.md`.
 
 ## What Markdown gives you
 

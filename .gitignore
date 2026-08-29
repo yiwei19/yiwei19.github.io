@@ -9,7 +9,8 @@ _site/
 Gemfile.lock
 vendor/
 
-# large source media kept locally but not published
+# original/source media kept locally but never published
+# (e.g. grasp-demo-source.mp4 — the 4K original of the site video)
 /*.mp4
 *.bak
 _to_delete/

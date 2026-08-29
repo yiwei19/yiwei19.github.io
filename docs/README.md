@@ -7,20 +7,33 @@ Markdown 文件 —— 从来不用碰 HTML 或 CSS。
 
 | 板块 | 改这个文件 | 指南 |
 |---|---|---|
-| 头像 / 姓名 / 联系方式 / 自我介绍 | `_data/profile.yml` | [01-bio.md](01-bio.md) |
-| News | `_data/news.yml` | [02-news.md](02-news.md) |
-| Publications | `_data/publications.yml` | [03-publications.md](03-publications.md) |
-| Projects | `_data/projects.yml` | [04-projects.md](04-projects.md) |
-| Experience | `_data/experience.yml` | [05-experience.md](05-experience.md) |
-| Teaching | `_data/teaching.yml` | [06-teaching.md](06-teaching.md) |
-| Education | `_data/education.yml` | [07-education.md](07-education.md) |
-| Awards & Honors | `_data/awards.yml` | [08-awards.md](08-awards.md) |
-| Blog 文章 | `_posts/` 里新建 `.md` | [09-blog.md](09-blog.md) |
-| 上线 / 排错 | — | [10-deploy.md](10-deploy.md) |
+| 头像 / 姓名 / 联系方式 / 自我介绍 | `_data/bio.yml` | [bio.md](bio.md) |
+| News | `_data/news.yml` | [news.md](news.md) |
+| Publications | `_data/publications.yml` | [publications.md](publications.md) |
+| Projects | `_data/projects.yml` | [projects.md](projects.md) |
+| Experience | `_data/experience.yml` | [experience.md](experience.md) |
+| Teaching | `_data/teaching.yml` | [teaching.md](teaching.md) |
+| Education | `_data/education.yml` | [education.md](education.md) |
+| Awards & Honors | `_data/awards.yml` | [awards.md](awards.md) |
+| Blog 文章 | `_posts/` 里新建 `.md` | [blog.md](blog.md) |
+| 上线 / 排错 | — | [deploy.md](deploy.md) |
 
 **空板块会自动隐藏。** Projects、Teaching、Awards 现在是空的，所以主页上看不到它们；
 往对应的 YAML 里加第一条，板块就自己出现了。板块顺序固定为
 Bio → News → Publications → Projects → Experience → Teaching → Education → Awards。
+
+## 文件命名规矩
+
+只有两条，加新东西的时候照着来就行：
+
+1. **指南和它讲的那个文件同名。** `docs/news.md` 讲 `_data/news.yml`，
+   `docs/bio.md` 讲 `_data/bio.yml`。想改哪个板块，名字就是那个板块，不用去记编号。
+2. **素材文件用小写 + 连字符，不用下划线、不用大写。**
+   `grasp-demo.mp4`、`grasp-demo-poster.jpg`。文件名会直接出现在网址里，
+   连字符是网页的通用写法。
+
+唯一的例外是博客文章 —— `_posts/2026-11-04-slug.md` 前面那串日期是 **Jekyll 强制要求**的，
+少一位或者格式不对，这篇文章会被直接忽略。详见 [blog.md](blog.md)。
 
 ## 三分钟看懂 YAML
 
@@ -58,4 +71,4 @@ git push
 ```
 
 等 1–2 分钟，刷新 https://yiwei19.github.io（Cmd+Shift+R 强制刷新）。
-出问题看 [10-deploy.md](10-deploy.md)。
+出问题看 [deploy.md](deploy.md)。
