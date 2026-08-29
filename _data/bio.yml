@@ -28,8 +28,8 @@ bio:
   - text: >
       I am an undergraduate studying Computer Science and Mathematics at
       <a href="https://www.purdue.edu">Purdue University</a> (B.S. expected 2028),
-      where I do research on robot learning at the Computational Motion, Manipulation,
-      and Autonomy (CoMMA) Lab with Prof. Zachary Kingston. Before Purdue I studied at
+      where I do research on robot learning at the <a href="https://commalab.org/">Computational Motion, Manipulation,
+      and Autonomy (CoMMA) Lab</a> with <a href:"https://commalab.org/members/kingston/">Prof. Zachary Kingston. Before Purdue I studied at
       Xiamen University and spent an exchange semester at HKUST.
   - label: Goal
     text: build general-purpose robots — and ship them into everyone's home.
@@ -41,8 +41,3 @@ bio:
       geometry, data pipelines, and safe execution. I love both, and I'm working toward
       being a <b>full-stack roboticist</b> — as comfortable training a foundation model
       as debugging the robot it runs on.
-  - label: Currently
-    muted: true
-    text: >
-      fast generative grasping on the SE(3) manifold, deployed end-to-end on a real
-      Franka R3 arm.
