@@ -60,6 +60,34 @@ git add 那个文件
 git rebase --continue
 ```
 
+## push 中途断掉 / HTTP 400
+
+```
+error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+send-pack: unexpected disconnect while reading sideband packet
+fatal: the remote end hung up unexpectedly
+```
+
+**跟网络没关系，是 git 的缓冲区太小。** git 通过 HTTPS 推送时默认只有 1 MiB 的
+`http.postBuffer`，一旦这次 push 的总体积超过它（比如带了一个视频），连接就会被掐断。
+注意结尾那句 `Everything up-to-date` 是假象 —— 什么都没推上去。
+
+这个仓库已经设好了，正常不会再遇到。**万一在别的机器上克隆后又碰到，跑这两行：**
+
+```bash
+git config http.postBuffer 524288000    # 500 MB
+git config http.version HTTP/1.1        # 绕开 macOS 上 HTTP/2 的一个已知问题
+git push
+```
+
+还是不行的话，把大文件那次 commit 单独先推，减小单次体积：
+
+```bash
+git log --oneline          # 找到中间那次 commit 的 hash
+git push origin <hash>:main
+git push
+```
+
 ## push 成功了但网站没更新
 
 按顺序查：
