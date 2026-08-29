@@ -1,0 +1,19 @@
+{%- if site.data.awards.size > 0 -%}
+<section class="section" id="awards">
+  <h2>Awards &amp; Honors</h2>
+  <div class="body">
+    <div class="cvlist">
+      {%- for a in site.data.awards %}
+      <div class="item">
+        <div class="head">
+          <span class="what">{{ a.title }}</span>
+          {%- if a.year != blank %}<span class="when">{{ a.year }}</span>{% endif %}
+        </div>
+        {%- if a.org != blank %}<div class="org">{{ a.org }}</div>{% endif %}
+        {%- if a.detail != blank %}<p class="detail">{{ a.detail }}</p>{% endif %}
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif -%}

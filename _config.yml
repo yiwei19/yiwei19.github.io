@@ -1,0 +1,35 @@
+# ---------------------------------------------------------------------------
+# Site-wide settings. Changing this file requires a push to take effect.
+# GitHub Pages builds this site with Jekyll automatically — no local build,
+# no plugins, no Gemfile needed.
+# ---------------------------------------------------------------------------
+
+title: Yi Wei (危伊)
+tagline: Undergraduate researcher in embodied AI and robot learning at Purdue University.
+url: https://yiwei19.github.io
+baseurl: ""
+
+# Blog post URLs → /blog/2026/08/29/some-title/
+permalink: /blog/:year/:month/:day/:title/
+
+# Markdown engine (GitHub Pages default)
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Files Jekyll should not copy into the built site
+exclude:
+  - docs
+  - README.md
+  - demo_4k_original.mp4
+  - _to_delete
+  - "*.bak"
+
+# Blog post defaults — every file in _posts/ gets layout: post automatically
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post

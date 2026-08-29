@@ -1,0 +1,12 @@
+{%- if site.data.news.size > 0 -%}
+<section class="section" id="news">
+  <h2>News</h2>
+  <div class="body">
+    <ul class="news">
+      {%- for n in site.data.news %}
+      <li><span class="when">{{ n.date }}</span><span class="what">{{ n.text }}</span></li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+{%- endif -%}

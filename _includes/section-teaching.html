@@ -1,0 +1,19 @@
+{%- if site.data.teaching.size > 0 -%}
+<section class="section" id="teaching">
+  <h2>Teaching</h2>
+  <div class="body">
+    <div class="cvlist">
+      {%- for t in site.data.teaching %}
+      <div class="item">
+        <div class="head">
+          <span class="what">{{ t.course }}</span>
+          {%- if t.period != blank %}<span class="when">{{ t.period }}</span>{% endif %}
+        </div>
+        <div class="org">{{ t.role }}{% if t.org != blank %} · {{ t.org }}{% endif %}</div>
+        {%- if t.detail != blank %}<p class="detail">{{ t.detail }}</p>{% endif %}
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif -%}

@@ -1,0 +1,49 @@
+# ---------------------------------------------------------------------------
+# Newest first. Guide: docs/03-publications.md
+# `me: Yi Wei` in authors is bolded automatically.
+# ---------------------------------------------------------------------------
+
+- title: Fast Generative Grasping via Lie Group-Constrained MeanFlow
+  authors: S. Talha Bukhari, Yi Wei, Ruiqi Ni, Zachary Kingston, Aniket Bera
+  venue: arXiv preprint arXiv:2608.26076
+  year: 2026
+  # Thumbnail: a video (autoplays, loops, muted) or an image. Use one.
+  video: /assets/franka_grasp_demo.mp4
+  poster: /assets/grasp_demo_poster.jpg
+  # image: /assets/some_teaser.png
+  media_caption: >
+    Real-robot comparison against SE3Dif, BRIDGeR, EGF and VSIGD — 2× speed.
+  summary: >
+    Grasp synthesis is multimodal by nature — a good grasp is a distribution, not a
+    point estimate — which makes generative models a natural fit, but their iterative
+    sampling is too slow for time-critical robot control. We formulate MeanFlow on the
+    product Lie group SO(3) × &#8477;<sup>3</sup>, coupling an algebraic semigroup
+    consistency condition with Riemannian Conditional Flow Matching so that the average
+    velocity stays anchored to the data distribution. The model samples reliable grasps
+    in <b>&le; 5 network evaluations</b>, matching state-of-the-art diffusion and
+    flow-based grasp generators on ACRONYM at millisecond-scale latency (up to
+    <b>39× speed-up</b>), and transfers directly to real-world grasping with no
+    additional training or domain adaptation.
+  contribution: >
+    I owned the real-robot side — turning the model into a working stack on a physical
+    Franka R3. I built the calibrated eye-in-hand RGB-D pipeline with an Orbbec Femto
+    wrist camera, diagnosed and fixed a ~30 mm hand-eye error caused by a
+    frame-convention mismatch, designed a shared-correction multi-view ICP that cut
+    validation alignment error from 11.6 mm to 10.2 mm, wrote the adapter mapping
+    generated SE(3) grasps into the robot frame, and integrated collision-aware VAMP
+    planning — validating end-to-end execution to roughly 1 mm / 0.13°.
+  links:
+    - label: arXiv
+      url: https://arxiv.org/abs/2608.26076
+    - label: PDF
+      url: https://arxiv.org/pdf/2608.26076
+    - label: video
+      url: /assets/franka_grasp_demo.mp4
+  bibtex: |
+    @article{bukhari2026meanflowgrasp,
+      title   = {Fast Generative Grasping via Lie Group-Constrained MeanFlow},
+      author  = {Bukhari, S. Talha and Wei, Yi and Ni, Ruiqi and
+                 Kingston, Zachary and Bera, Aniket},
+      journal = {arXiv preprint arXiv:2608.26076},
+      year    = {2026}
+    }

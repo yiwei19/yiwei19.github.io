@@ -1,0 +1,19 @@
+{%- if site.data.experience.size > 0 -%}
+<section class="section" id="experience">
+  <h2>Experience</h2>
+  <div class="body">
+    <div class="cvlist">
+      {%- for e in site.data.experience %}
+      <div class="item">
+        <div class="head">
+          <span class="what">{{ e.role }}</span>
+          {%- if e.period != blank %}<span class="when">{{ e.period }}</span>{% endif %}
+        </div>
+        <div class="org">{{ e.org }}{% if e.location != blank %} · {{ e.location }}{% endif %}</div>
+        {%- if e.detail != blank %}<p class="detail">{{ e.detail }}</p>{% endif %}
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif -%}

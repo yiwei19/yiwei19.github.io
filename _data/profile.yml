@@ -1,0 +1,48 @@
+# ---------------------------------------------------------------------------
+# The header block: name, photo, contact links, and the bio paragraphs.
+# Guide: docs/01-bio.md
+# ---------------------------------------------------------------------------
+
+name: Yi Wei
+name_cn: 危伊
+photo: /assets/profile.jpg
+photo_alt: Yi Wei
+
+# Contact links, left to right. Delete a line to remove that link.
+# Set `file: false` for external URLs; `file: true` means it lives in assets/.
+links:
+  - label: Email
+    url: mailto:wei577@purdue.edu
+  - label: GitHub
+    url: https://github.com/yiwei19
+  - label: LinkedIn
+    url: https://www.linkedin.com/in/yiwei19
+  # - label: CV
+  #   url: /assets/Yi_Wei_CV.pdf
+  # - label: Google Scholar
+  #   url: https://scholar.google.com/citations?user=XXXX
+
+# Each item becomes one paragraph, in order.
+# `label` is optional — it renders bold at the start of the paragraph.
+bio:
+  - text: >
+      I am an undergraduate studying Computer Science and Mathematics at
+      <a href="https://www.purdue.edu">Purdue University</a> (B.S. expected 2028),
+      where I do research on robot learning at the Computational Motion, Manipulation,
+      and Autonomy (CoMMA) Lab with Prof. Zachary Kingston. Before Purdue I studied at
+      Xiamen University and spent an exchange semester at HKUST.
+  - label: Goal
+    text: build general-purpose robots — and ship them into everyone's home.
+  - label: Research interest
+    text: >
+      embodied AI at the intersection of large-scale models and real hardware.
+      On the model side: generative models for manipulation, world models, and
+      model-based reinforcement learning. On the robot side: calibration, perception
+      geometry, data pipelines, and safe execution. I love both, and I'm working toward
+      being a <b>full-stack roboticist</b> — as comfortable training a foundation model
+      as debugging the robot it runs on.
+  - label: Currently
+    muted: true
+    text: >
+      fast generative grasping on the SE(3) manifold, deployed end-to-end on a real
+      Franka R3 arm.

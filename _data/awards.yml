@@ -1,0 +1,10 @@
+# ---------------------------------------------------------------------------
+# Scholarships, competition results, honors. Newest first.
+# Guide: docs/08-awards.md — hidden while empty.
+# ---------------------------------------------------------------------------
+
+# - title: Name of the award
+#   org: Awarding body
+#   year: "2026"
+#   detail: >
+#     Optional one-liner — selection rate, cohort size, what it was for.

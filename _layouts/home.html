@@ -1,0 +1,34 @@
+---
+layout: default
+---
+{% include section-intro.html %}
+{% include section-news.html %}
+{% include section-publications.html %}
+{% include section-projects.html %}
+{% include section-experience.html %}
+{% include section-teaching.html %}
+{% include section-education.html %}
+{% include section-awards.html %}
+
+<script>
+// If a thumbnail video can't play (missing file, or a browser without H.264),
+// fall back to its poster image rather than showing a dead box.
+(function () {
+  document.querySelectorAll('video[data-fallback]').forEach(function (v) {
+    var swapped = false;
+    function toPoster() {
+      if (swapped) return;
+      swapped = true;
+      var src = v.getAttribute('data-fallback');
+      if (!src) { v.remove(); return; }
+      var img = new Image();
+      img.onload = function () { v.replaceWith(img); };
+      img.onerror = function () { v.remove(); };
+      img.src = src;
+    }
+    v.addEventListener('error', toPoster, true);
+    v.addEventListener('loadeddata', function () { swapped = true; });
+    if (v.canPlayType && v.canPlayType('video/mp4; codecs="avc1.640028"') === '') toPoster();
+  });
+})();
+</script>

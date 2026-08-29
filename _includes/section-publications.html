@@ -1,0 +1,40 @@
+{%- assign me_bold = '<span class="me">' | append: site.data.profile.name | append: '</span>' -%}
+{%- if site.data.publications.size > 0 -%}
+<section class="section" id="publications">
+  <h2>Publications</h2>
+  <div class="body">
+    {%- for pub in site.data.publications %}
+    {%- assign has_media = false -%}
+    {%- if pub.video != blank or pub.image != blank -%}{%- assign has_media = true -%}{%- endif -%}
+    <div class="entry{% unless has_media %} no-media{% endunless %}">
+      {%- if has_media %}
+      <figure class="media" style="margin:0">
+        {%- if pub.video != blank %}
+        <video autoplay muted loop playsinline controls preload="metadata"
+               {% if pub.poster != blank %}poster="{{ pub.poster | relative_url }}"{% endif %}
+               src="{{ pub.video | relative_url }}"
+               data-fallback="{{ pub.poster | relative_url }}"></video>
+        {%- elsif pub.image != blank %}
+        <img src="{{ pub.image | relative_url }}" alt="{{ pub.title }}">
+        {%- endif %}
+        {%- if pub.media_caption != blank %}<figcaption>{{ pub.media_caption }}</figcaption>{% endif %}
+      </figure>
+      {%- endif %}
+      <div>
+        <p class="title">{%- if pub.links and pub.links.first -%}<a href="{{ pub.links.first.url | relative_url }}">{{ pub.title }}</a>{%- else -%}{{ pub.title }}{%- endif -%}</p>
+        <p class="byline">{{ pub.authors | replace: site.data.profile.name, me_bold }}</p>
+        <p class="where">{{ pub.venue }}{% if pub.year != blank %}, {{ pub.year }}{% endif %}{% if pub.status != blank %} · <span class="status">{{ pub.status }}</span>{% endif %}</p>
+        {%- if pub.summary != blank %}<p class="prose">{{ pub.summary }}</p>{% endif %}
+        {%- if pub.contribution != blank %}<p class="contribution"><b>My contribution:</b> {{ pub.contribution }}</p>{% endif %}
+        {%- if pub.links.size > 0 %}
+        <div class="rowlinks">{% for l in pub.links %}<a href="{{ l.url | relative_url }}">{{ l.label }}</a>{% endfor %}</div>
+        {%- endif %}
+        {%- if pub.bibtex != blank %}
+        <details class="bib"><summary>BibTeX</summary><pre>{{ pub.bibtex | strip }}</pre></details>
+        {%- endif %}
+      </div>
+    </div>
+    {%- endfor %}
+  </div>
+</section>
+{%- endif -%}

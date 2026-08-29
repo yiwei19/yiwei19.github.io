@@ -1,0 +1,16 @@
+# ---------------------------------------------------------------------------
+# Newest first. Guide: docs/02-news.md
+# ---------------------------------------------------------------------------
+
+- date: "08/2026"
+  text: >
+    Our paper <i>Fast Generative Grasping via Lie Group-Constrained MeanFlow</i>
+    is on <a href="https://arxiv.org/abs/2608.26076">arXiv</a>.
+
+- date: "2026"
+  text: >
+    Led the real-robot deployment of our grasp generation model on a Franka R3 arm
+    at Purdue CoMMA Lab.
+
+- date: "2026"
+  text: Joined the CoMMA Lab at Purdue as a first-year undergraduate researcher.

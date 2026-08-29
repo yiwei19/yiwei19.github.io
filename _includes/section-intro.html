@@ -1,0 +1,15 @@
+{%- assign p = site.data.profile -%}
+<section class="intro">
+  <div class="portrait">
+    {% if p.photo %}<img src="{{ p.photo | relative_url }}" alt="{{ p.photo_alt | default: p.name }}">{% endif %}
+  </div>
+  <div>
+    <h1>{{ p.name }}{% if p.name_cn %}<span class="cn">{{ p.name_cn }}</span>{% endif %}</h1>
+    <div class="contact">
+      {%- for l in p.links %}<a href="{{ l.url | relative_url }}">{{ l.label }}</a>{% endfor -%}
+    </div>
+    {% for para in p.bio -%}
+    <p{% if para.muted %} class="muted"{% endif %}>{% if para.label %}<b>{{ para.label }}:</b> {% endif %}{{ para.text }}</p>
+    {% endfor -%}
+  </div>
+</section>

@@ -1,0 +1,21 @@
+{%- if site.data.education.size > 0 -%}
+<section class="section" id="education">
+  <h2>Education</h2>
+  <div class="body">
+    <div class="cvlist">
+      {%- for ed in site.data.education %}
+      <div class="item">
+        <div class="head">
+          <span class="what">{{ ed.school }}</span>
+          {%- if ed.period != blank %}<span class="when">{{ ed.period }}</span>{% endif %}
+        </div>
+        {%- if ed.degree != blank or ed.location != blank %}
+        <div class="org">{{ ed.degree }}{% if ed.degree != blank and ed.location != blank %} · {% endif %}{{ ed.location }}</div>
+        {%- endif %}
+        {%- if ed.detail != blank %}<p class="detail">{{ ed.detail }}</p>{% endif %}
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif -%}

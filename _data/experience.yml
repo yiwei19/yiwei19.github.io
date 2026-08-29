@@ -1,0 +1,12 @@
+# ---------------------------------------------------------------------------
+# Positions held — research, industry internships, anything with a title,
+# an organization, and dates. Newest first. Guide: docs/05-experience.md
+# ---------------------------------------------------------------------------
+
+- role: Undergraduate Researcher
+  org: Computational Motion, Manipulation, and Autonomy (CoMMA) Lab, Purdue University
+  period: 2026–present
+  location: West Lafayette, IN
+  detail: >
+    Generative grasping on SE(3), real-robot deployment on a Franka R3, and
+    model-based reinforcement learning. Advised by Prof. Zachary Kingston.

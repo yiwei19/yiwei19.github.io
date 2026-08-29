@@ -1,0 +1,24 @@
+---
+layout: default
+title: Blog
+permalink: /blog/
+description: Research notes, paper reading, and thinking out loud.
+---
+<div class="pagehead">
+  <h1>Blog</h1>
+  <p>Research notes, paper reading, and thinking out loud.</p>
+</div>
+
+<div class="postlist">
+  {%- if site.posts.size > 0 %}
+  {%- for post in site.posts %}
+  <div class="item">
+    <p class="when">{{ post.date | date: "%B %-d, %Y" }}</p>
+    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+    <p class="blurb">{% if post.description %}{{ post.description }}{% else %}{{ post.excerpt | strip_html | truncate: 180 }}{% endif %}</p>
+  </div>
+  {%- endfor %}
+  {%- else %}
+  <p class="empty">No posts yet.</p>
+  {%- endif %}
+</div>

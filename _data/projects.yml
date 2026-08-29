@@ -1,0 +1,21 @@
+# ---------------------------------------------------------------------------
+# Research and engineering projects that are not (yet) papers.
+# Guide: docs/04-projects.md
+#
+# The Projects section is hidden entirely while this list is empty —
+# delete the leading "#" on the block below and fill it in to switch it on.
+# ---------------------------------------------------------------------------
+
+# - title: Constrained Search Spaces for Model-Based RL
+#   org: Purdue CoMMA Lab
+#   period: 2026–present
+#   status: in progress          # optional; renders in a muted italic
+#   image: /assets/mbrl.png      # optional
+#   summary: >
+#     One paragraph on what the project is and why it matters.
+#   contribution: >
+#     Optional second paragraph: what you specifically did.
+#   tags: TD-MPC2 · model-based RL · meta-learning
+#   links:
+#     - label: code
+#       url: https://github.com/yiwei19/...

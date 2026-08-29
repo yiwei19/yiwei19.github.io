@@ -2,47 +2,59 @@
 
 线上地址：https://yiwei19.github.io
 
-## 需要你放入的文件（assets/ 文件夹）
+学术主页 + 博客。GitHub Pages 自带的 Jekyll 负责构建 —— **本地不需要装任何东西**，
+push 上去 1–2 分钟后自动生效。
 
-| 文件 | 用途 | 状态 |
-|---|---|---|
-| `assets/profile.jpg` | 头像（方形裁剪最佳） | 待补 |
-| `assets/Yi_Wei_CV.pdf` | 简历 PDF（导出英文版即可） | 待补 |
-| `assets/meanflow_teaser.png` | 论文 teaser 图（从 arXiv 论文里截 Fig.1），demo 视频缺失时的备用缩略图 | 待补 |
-| `assets/franka_grasp_demo.mp4` | Franka 抓取 demo 视频，**用作论文条目的缩略图**（压缩到 <20MB：`ffmpeg -i in.mp4 -vf scale=-2:576 -crf 28 out.mp4`） | 待补，且需先跟导师确认可公开 |
+## 怎么更新
 
-文件缺失时页面显示灰色占位块，不会报错——可以先上线再逐步补素材。
+**内容和外观是分开的。** 日常只改 `_data/` 里的 YAML 和 `_posts/` 里的 Markdown，
+不用碰 HTML 和 CSS。
 
-## 页面结构
+👉 **[docs/README.md](docs/README.md) 是所有更新指南的入口**，每个板块一份。
 
-Header（头像 + bio）→ News → **Publications** → Experience
+| 板块 | 改哪个文件 |
+|---|---|
+| 头像 / 姓名 / 联系方式 / 自我介绍 | `_data/profile.yml` |
+| News | `_data/news.yml` |
+| Publications | `_data/publications.yml` |
+| Projects | `_data/projects.yml` |
+| Experience | `_data/experience.yml` |
+| Teaching | `_data/teaching.yml` |
+| Education | `_data/education.yml` |
+| Awards & Honors | `_data/awards.yml` |
+| 博客文章 | `_posts/` 里新建 `.md` |
 
-纯 publication-centric 学术主页（参考 tairanhe.com / jonbarron.info 的做法）：不单列 project 区块，
-所有工作通过论文条目呈现。每条论文的格式是：
+空的板块会自动从主页上隐藏。
 
-1. 左侧缩略图（优先用 demo 视频 `franka_grasp_demo.mp4`，没有就自动退回 teaser 图，再没有就显示灰色占位块）
-2. 标题（链到 arXiv）→ 作者列表（你的名字加粗）→ venue
-3. 第一段：这篇论文是关于什么的
-4. 第二段（带左侧竖线）：**My contribution** —— 你在其中的具体工程贡献
-5. arXiv / PDF 链接 + 可折叠 BibTeX
+## 目录结构
 
-index.html 里有一段注释掉的 `.pub` 模板，加第二篇论文时复制那段填内容即可。
+```
+_config.yml           站点设置
+_data/                所有内容（← 你日常改这里）
+_posts/               博客文章（Markdown）
+_layouts/             页面骨架
+_includes/            每个板块的 HTML 模板
+assets/               图片、视频、CV
+  css/style.css       全站样式
+docs/                 更新指南（← 从这里开始看）
+index.html            主页（只有一行 front matter，内容都来自 _data/）
+blog.html             博客列表页
+```
 
-## 部署到 GitHub Pages
+## 发布
 
-1. 在 GitHub 新建**空**仓库，名字必须是 `yiwei19.github.io`（不要勾选 add README）
-2. 在本文件夹里（git 已初始化并 commit 好）：
-   ```bash
-   cd ~/Documents/career/website
-   git push -u origin main
-   ```
-3. 等 1–2 分钟，访问 https://yiwei19.github.io
+```bash
+cd ~/Documents/career/website
+git add -A
+git commit -m "写清楚改了什么"
+git push
+```
+
+排错见 [docs/10-deploy.md](docs/10-deploy.md)。
 
 ## 待办
 
-- [ ] 补 assets/ 里的四个文件
-- [ ] 确认 demo 视频/方法细节的公开范围（先问导师）
-- [ ] 论文被会议接收后，把 Publications 里的 "arXiv preprint" 改成会议名
-- [ ] model-based RL / 约束搜索空间（TD-MPC 方向）出论文后，用 index.html 里的 .pub 模板加第二条
+- [ ] 补 `assets/Yi_Wei_CV.pdf`，然后在 `_data/profile.yml` 里取消注释 CV 链接
+- [ ] 删掉示例博客文章 `_posts/2026-08-29-how-this-blog-works.md`，换成真的第一篇
+- [ ] model-based RL / 约束搜索空间方向有产出后，填 `_data/projects.yml`
 - [ ] 简历页眉加一行网站地址
-- [ ] 考虑加 Google Scholar 链接（有 profile 之后）

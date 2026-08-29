@@ -1,0 +1,27 @@
+{%- if site.data.projects.size > 0 -%}
+<section class="section" id="projects">
+  <h2>Projects</h2>
+  <div class="body">
+    {%- for pr in site.data.projects %}
+    <div class="entry{% if pr.image == blank %} no-media{% endif %}">
+      {%- if pr.image != blank %}
+      <figure class="media" style="margin:0">
+        <img src="{{ pr.image | relative_url }}" alt="{{ pr.title }}">
+        {%- if pr.media_caption != blank %}<figcaption>{{ pr.media_caption }}</figcaption>{% endif %}
+      </figure>
+      {%- endif %}
+      <div>
+        <p class="title">{{ pr.title }}</p>
+        <p class="where">{% if pr.org != blank %}{{ pr.org }}{% endif %}{% if pr.period != blank %} · {{ pr.period }}{% endif %}{% if pr.status != blank %} · <span class="status">{{ pr.status }}</span>{% endif %}</p>
+        {%- if pr.summary != blank %}<p class="prose">{{ pr.summary }}</p>{% endif %}
+        {%- if pr.contribution != blank %}<p class="contribution"><b>My contribution:</b> {{ pr.contribution }}</p>{% endif %}
+        {%- if pr.tags != blank %}<p class="tags">{{ pr.tags }}</p>{% endif %}
+        {%- if pr.links.size > 0 %}
+        <div class="rowlinks">{% for l in pr.links %}<a href="{{ l.url | relative_url }}">{{ l.label }}</a>{% endfor %}</div>
+        {%- endif %}
+      </div>
+    </div>
+    {%- endfor %}
+  </div>
+</section>
+{%- endif -%}
