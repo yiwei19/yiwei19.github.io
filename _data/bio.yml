@@ -27,12 +27,16 @@ links:
 bio:
   - text: >
       I am an undergraduate studying Computer Science and Mathematics at
-      <a href="https://www.purdue.edu">Purdue University</a> (B.S. expected 2028),
-      where I do research on robot learning at the <a href="https://commalab.org/">Computational Motion, Manipulation,
-      and Autonomy (CoMMA) Lab</a> with <a href:"https://commalab.org/members/kingston/">Prof. Zachary Kingston. Before Purdue I studied at
-      Xiamen University and spent an exchange semester at HKUST.
+      <a href="https://www.purdue.edu" style="text-decoration: none;"><b>Purdue University</b></a> (B.S. expected 2028),
+      where I do research on robot learning at the
+      <a href="https://commalab.org/" style="text-decoration: none;"><b>Computational Motion, Manipulation,
+      and Autonomy (CoMMA) Lab</b></a> with
+      <a href="https://commalab.org/members/kingston/" style="text-decoration: none;"><b>Prof. Zachary Kingston</b></a>.
+      Before Purdue I studied at Xiamen University and spent an exchange semester at HKUST.
+
   - label: Goal
     text: build general-purpose robots — and ship them into everyone's home.
+
   - label: Research interest
     text: >
       embodied AI at the intersection of large-scale models and real hardware.
