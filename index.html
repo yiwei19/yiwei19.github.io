@@ -69,6 +69,7 @@
   .pub .contrib { border-left: 2px solid var(--rule); padding-left: 12px; }
   .pub .contrib b { font-weight: 600; }
   .pub .plinks { font-size: 14px; margin-top: 8px; }
+  .pub .vidnote { color: var(--muted); font-size: 13px; margin: 6px 0 0; }
   .pub .plinks .sep { color: #c8c8c8; margin: 0 5px; }
   details.bib { margin-top: 8px; }
   details.bib summary { cursor: pointer; color: var(--link); font-size: 14px; }
@@ -131,7 +132,8 @@
   <div class="pub">
     <div class="media" id="pub1-media">
       <!-- Preferred: assets/franka_grasp_demo.mp4 · falls back to assets/meanflow_teaser.png -->
-      <video id="pub1-video" autoplay muted loop playsinline controls src="assets/franka_grasp_demo.mp4"></video>
+      <video id="pub1-video" autoplay muted loop playsinline controls preload="metadata"
+             poster="assets/grasp_demo_poster.jpg" src="assets/franka_grasp_demo.mp4"></video>
     </div>
     <div class="entry">
       <div class="title"><a href="https://arxiv.org/abs/2608.26076">Fast Generative Grasping via Lie Group-Constrained MeanFlow</a></div>
@@ -143,8 +145,9 @@
       <p class="contrib"><b>My contribution:</b> I owned the real-robot side — turning the model into a working stack on a physical Franka R3. I built the calibrated eye-in-hand RGB-D pipeline with an Orbbec Femto wrist camera, diagnosed and fixed a ~30&nbsp;mm hand-eye error caused by a frame-convention mismatch, designed a shared-correction multi-view ICP that cut validation alignment error from 11.6&nbsp;mm to 10.2&nbsp;mm, wrote the adapter mapping generated SE(3) grasps into the robot frame, and integrated collision-aware VAMP planning — validating end-to-end execution to roughly 1&nbsp;mm / 0.13&deg;.</p>
 
       <div class="plinks">
-        <a href="https://arxiv.org/abs/2608.26076">arXiv</a><span class="sep">|</span><a href="https://arxiv.org/pdf/2608.26076">PDF</a>
+        <a href="https://arxiv.org/abs/2608.26076">arXiv</a><span class="sep">|</span><a href="https://arxiv.org/pdf/2608.26076">PDF</a><span class="sep">|</span><a href="assets/franka_grasp_demo.mp4">video</a>
       </div>
+      <p class="vidnote">Real-robot comparison against SE3Dif, BRIDGeR, EGF and VSIGD &mdash; 2&times; speed. <a href="assets/franka_grasp_demo.mp4">Open full size</a> to read the per-method success counts.</p>
       <details class="bib">
         <summary>BibTeX</summary>
 <pre>@article{bukhari2026meanflowgrasp,
@@ -188,28 +191,32 @@
 </div>
 
 <script>
-// Publication thumbnail fallback: demo video -> teaser figure -> placeholder.
+// Publication thumbnail fallback: demo video -> poster frame -> placeholder.
+// Only fires on a real load error or a browser with no H.264 support — never on a slow connection.
 (function () {
   var box = document.getElementById('pub1-media');
   var vid = document.getElementById('pub1-video');
   if (!box || !vid) return;
-  var done = false;
-  function placeholder() {
-    box.innerHTML = '<div class="media-placeholder">demo video<br>(assets/franka_grasp_demo.mp4)<br><br>or teaser figure<br>(assets/meanflow_teaser.png)</div>';
-  }
-  function fallback() {
-    if (done) return;
-    done = true;
+  var swapped = false;
+
+  function toPoster() {
+    if (swapped) return;
+    swapped = true;
     var probe = new Image();
     probe.onload = function () {
-      box.innerHTML = '<img src="assets/meanflow_teaser.png" alt="Lie Group-Constrained MeanFlow teaser">';
+      box.innerHTML = '<img src="assets/grasp_demo_poster.jpg" alt="Real-robot grasping comparison">';
     };
-    probe.onerror = placeholder;
-    probe.src = 'assets/meanflow_teaser.png';
+    probe.onerror = function () {
+      box.innerHTML = '<div class="media-placeholder">demo video<br>(assets/franka_grasp_demo.mp4)</div>';
+    };
+    probe.src = 'assets/grasp_demo_poster.jpg';
   }
-  vid.addEventListener('error', fallback, true);
-  vid.addEventListener('loadeddata', function () { done = true; });
-  setTimeout(function () { if (vid.readyState === 0) fallback(); }, 1500);
+
+  vid.addEventListener('error', toPoster, true);
+  vid.addEventListener('loadeddata', function () { swapped = true; });
+
+  // Browsers without H.264 (rare, but some Linux builds) get the poster instead of a dead box.
+  if (vid.canPlayType && vid.canPlayType('video/mp4; codecs="avc1.640028"') === '') toPoster();
 })();
 </script>
 </body>
