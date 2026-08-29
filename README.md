@@ -1,7 +1,6 @@
 # Yi Wei — Personal Website
 
-单文件学术主页（参考 tairanhe.com 风格），无框架、无构建步骤。
-线上地址（部署后）：https://yiwei19.github.io
+线上地址：https://yiwei19.github.io
 
 ## 需要你放入的文件（assets/ 文件夹）
 
