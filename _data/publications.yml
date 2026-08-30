@@ -12,10 +12,10 @@
   poster: /assets/grasp-demo-poster.jpg
   # image: /assets/some_teaser.png
   media_caption: >
-    Real-robot comparison against SE3Dif, BRIDGeR, EGF and VSIGD — 2× speed.
+    Real-robot comparison against SE3Dif, BRIDGeR, EGF, and VSIGD. Our method runs 2× faster.
   summary: >
-    Grasp synthesis is multimodal by nature — a good grasp is a distribution, not a
-    point estimate — which makes generative models a natural fit, but their iterative
+    Grasp synthesis is multimodal by nature. A good grasp is a distribution, not a
+    point estimate, which makes generative models a natural fit, but their iterative
     sampling is too slow for time-critical robot control. We formulate MeanFlow on the
     product Lie group SO(3) × &#8477;<sup>3</sup>, coupling an algebraic semigroup
     consistency condition with Riemannian Conditional Flow Matching so that the average
@@ -25,13 +25,13 @@
     <b>39× speed-up</b>), and transfers directly to real-world grasping with no
     additional training or domain adaptation.
   contribution: >
-    I owned the real-robot side — turning the model into a working stack on a physical
+    I owned the real-robot side, turning the model into a working stack on a physical
     Franka R3. I built the calibrated eye-in-hand RGB-D pipeline with an Orbbec Femto
     wrist camera, diagnosed and fixed a ~30 mm hand-eye error caused by a
     frame-convention mismatch, designed a shared-correction multi-view ICP that cut
     validation alignment error from 11.6 mm to 10.2 mm, wrote the adapter mapping
     generated SE(3) grasps into the robot frame, and integrated collision-aware VAMP
-    planning — validating end-to-end execution to roughly 1 mm / 0.13°.
+    planning and validated end-to-end execution to roughly 1 mm / 0.13°.
   links:
     - label: arXiv
       url: https://arxiv.org/abs/2608.26076

@@ -32,19 +32,19 @@ bio:
       <a href="https://commalab.org/" style="text-decoration: none;"><b>Computational Motion, Manipulation,
       and Autonomy (CoMMA) Lab</b></a> with
       <a href="https://commalab.org/members/kingston/" style="text-decoration: none;"><b>Prof. Zachary Kingston</b></a>.
-      Before Purdue I studied at Xiamen University and spent an exchange semester at HKUST.
+      Before Purdue, I studied at Xiamen University and was on exchange at HKUST.
 
   - label: Goal
-    text: build general-purpose robots — and ship them into everyone's home.
+    text: build general-purpose robots and ship them into everyone's home.
 
   - label: Research interests
     text: >
       I am broadly interested in building general-purpose robots through:<br>
-      • <b>Model-based robot learning</b> — learning models that help robots reason,
-      plan, and act effectively;<br>
-      • <b>Reinforcement learning</b> — enabling robots to learn useful behaviors
-      through interaction and experience;<br>
-      • <b>Robot hardware and prototyping</b> — building my own robot prototypes and
+      • <b>Model-based robot learning:</b> Learning models that help robots reason,
+      plan, and act effectively.<br>
+      • <b>Reinforcement learning:</b> Enabling robots to learn useful behaviors
+      through interaction and experience.<br>
+      • <b>Robot hardware and prototyping:</b> Building my own robot prototypes and
       bringing learning algorithms onto physical systems.<br>
       Together, these interests reflect my goal of becoming a <b>full-stack roboticist</b>
       who can work across both learning algorithms and real robot systems.

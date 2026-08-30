@@ -175,6 +175,13 @@ a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 .entry .tags { font-size: 13.5px; color: var(--muted); margin-top: 8px; }
 .entry .rowlinks { font-size: 14.5px; margin-top: 9px; display: flex; flex-wrap: wrap; gap: 0 12px; }
 
+details.pub-details { margin-top: 10px; }
+details.pub-details summary { cursor: pointer; font-size: 14px; color: var(--ink-soft); width: max-content; }
+details.pub-details summary:hover { color: var(--ink); }
+.pub-details-body { margin-top: 10px; }
+.pub-details-body .prose:last-child,
+.pub-details-body .contribution:last-child { margin-bottom: 0; }
+
 details.bib { margin-top: 10px; }
 details.bib summary { cursor: pointer; font-size: 14px; color: var(--ink-soft); width: max-content; }
 details.bib summary:hover { color: var(--ink); }
@@ -189,6 +196,10 @@ details.bib pre {
 .cvlist { margin: 0; }
 .cvlist .item + .item { margin-top: 20px; }
 .cvlist .head {
+  display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  align-items: baseline;
+}
+.cvlist .subhead {
   display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
   align-items: baseline;
 }

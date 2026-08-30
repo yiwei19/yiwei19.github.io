@@ -7,10 +7,13 @@
       <div class="item">
         <div class="head">
           <span class="what">{{ ed.school }}</span>
+          {%- if ed.location != blank %}<span class="when">{{ ed.location }}</span>{% endif %}
+        </div>
+        {%- if ed.degree != blank or ed.period != blank %}
+        <div class="subhead">
+          {%- if ed.degree != blank %}<span class="org">{{ ed.degree }}</span>{% endif %}
           {%- if ed.period != blank %}<span class="when">{{ ed.period }}</span>{% endif %}
         </div>
-        {%- if ed.degree != blank or ed.location != blank %}
-        <div class="org">{{ ed.degree }}{% if ed.degree != blank and ed.location != blank %} · {% endif %}{{ ed.location }}</div>
         {%- endif %}
         {%- if ed.detail != blank %}<p class="detail">{{ ed.detail }}</p>{% endif %}
       </div>
