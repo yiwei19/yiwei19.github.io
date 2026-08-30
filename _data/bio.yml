@@ -37,11 +37,14 @@ bio:
   - label: Goal
     text: build general-purpose robots — and ship them into everyone's home.
 
-  - label: Research interest
+  - label: Research interests
     text: >
-      embodied AI at the intersection of large-scale models and real hardware.
-      On the model side: generative models for manipulation, world models, and
-      model-based reinforcement learning. On the robot side: calibration, perception
-      geometry, data pipelines, and safe execution. I love both, and I'm working toward
-      being a <b>full-stack roboticist</b> — as comfortable training a foundation model
-      as debugging the robot it runs on.
+      I am broadly interested in building general-purpose robots through:<br>
+      • <b>Model-based robot learning</b> — learning models that help robots reason,
+      plan, and act effectively;<br>
+      • <b>Reinforcement learning</b> — enabling robots to learn useful behaviors
+      through interaction and experience;<br>
+      • <b>Robot hardware and prototyping</b> — building my own robot prototypes and
+      bringing learning algorithms onto physical systems.<br>
+      Together, these interests reflect my goal of becoming a <b>full-stack roboticist</b>
+      who can work across both learning algorithms and real robot systems.
