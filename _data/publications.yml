@@ -12,7 +12,7 @@
   poster: /assets/grasp-demo-poster.jpg
   # image: /assets/some_teaser.png
   media_caption: >
-    Real-robot comparison against SE3Dif, BRIDGeR, EGF, and VSIGD. Our method runs 2× faster.
+    Real-robot comparison against SE3Dif, BRIDGeR, EGF, and VSIGD. All videos are shown at 2× speed.
   summary: >
     Grasp synthesis is multimodal by nature. A good grasp is a distribution, not a
     point estimate, which makes generative models a natural fit, but their iterative
