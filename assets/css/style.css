@@ -2,7 +2,7 @@
    Yi Wei — personal site
    Monochrome: black on white. Three typefaces:
      Inter           — structure (name, nav, section labels, list entries)
-     Noto Sans SC    — Chinese text
+     Noto Serif SC   — Chinese Songti-style text
      Source Serif 4  — reading prose (blog posts, paper summaries)
    Layout: a narrow left rail carries the section name; content flows right.
    ========================================================================== */
@@ -15,9 +15,9 @@
   --hair:     #dcdcdc;
   --wash:     #f6f6f6;
 
-  --ui:   "Inter", "Noto Sans SC", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  --cn:   "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
-  --read: "Source Serif 4", "Noto Sans SC", Georgia, "Times New Roman", serif;
+  --ui:   "Inter", "Noto Serif SC", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --cn:   "Noto Serif SC", "Songti SC", STSong, SimSun, serif;
+  --read: "Source Serif 4", "Noto Serif SC", Georgia, "Times New Roman", serif;
   --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 
   --rail: 132px;
