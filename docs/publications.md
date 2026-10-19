@@ -56,7 +56,7 @@ venue、这篇论文讲什么、**你的具体贡献**、链接、BibTeX。
 | `media_caption` | 否 | 缩略图下面的小字 |
 | `summary` | 否 | 论文讲什么 |
 | `contribution` | 否 | 你的贡献，带左侧竖线显示 |
-| `links` | 否 | `label` + `url` 的列表，按顺序显示 |
+| `links` | 否 | `label` + `url` 的列表，显示成一排按钮。label 用小写：`arXiv`、`pdf`、`video`、`code`、`slides`。`abs`（展开 summary + contribution）和 `bib`（展开 BibTeX）是自动加的，不用写进 links |
 | `bibtex` | 否 | 用 `\|`（不是 `>`）开头，保留换行和缩进 |
 
 **注意 `bibtex` 用 `|` 而不是 `>`** —— `>` 会把所有换行折成一行，BibTeX 就废了。

@@ -7,6 +7,7 @@ layout: default
 {% include section-projects.html %}
 {% include section-experience.html %}
 {% include section-teaching.html %}
+{% include section-service.html %}
 {% include section-education.html %}
 {% include section-awards.html %}
 
@@ -29,6 +30,22 @@ layout: default
     v.addEventListener('error', toPoster, true);
     v.addEventListener('loadeddata', function () { swapped = true; });
     if (v.canPlayType && v.canPlayType('video/mp4; codecs="avc1.640028"') === '') toPoster();
+  });
+})();
+
+// Publication "abs" / "bib" buttons open their panel in place; opening one
+// closes the other panel of the same paper.
+(function () {
+  document.querySelectorAll('.pills button[aria-controls]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var open = btn.getAttribute('aria-expanded') !== 'true';
+      btn.parentNode.querySelectorAll('button[aria-controls]').forEach(function (b) {
+        b.setAttribute('aria-expanded', 'false');
+        document.getElementById(b.getAttribute('aria-controls')).hidden = true;
+      });
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      document.getElementById(btn.getAttribute('aria-controls')).hidden = !open;
+    });
   });
 })();
 </script>

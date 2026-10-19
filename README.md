@@ -20,9 +20,10 @@ Academic homepage + blog. GitHub Pages builds it with its built-in Jekyll, so
 | Projects | `_data/projects.yml` |
 | Experience | `_data/experience.yml` |
 | Teaching | `_data/teaching.yml` |
+| Service | `_data/service.yml` |
 | Education | `_data/education.yml` |
 | Awards & Honors | `_data/awards.yml` |
-| Blog posts | new `.md` file in `_posts/` |
+| Blog posts (currently hidden, see [docs/blog.md](docs/blog.md)) | new `.md` file in `_posts/` |
 
 Empty sections are hidden from the homepage automatically.
 

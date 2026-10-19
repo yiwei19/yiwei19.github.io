@@ -13,14 +13,15 @@ Markdown 文件 —— 从来不用碰 HTML 或 CSS。
 | Projects | `_data/projects.yml` | [projects.md](projects.md) |
 | Experience | `_data/experience.yml` | [experience.md](experience.md) |
 | Teaching | `_data/teaching.yml` | [teaching.md](teaching.md) |
+| Service | `_data/service.yml` | [service.md](service.md) |
 | Education | `_data/education.yml` | [education.md](education.md) |
 | Awards & Honors | `_data/awards.yml` | [awards.md](awards.md) |
-| Blog 文章 | `_posts/` 里新建 `.md` | [blog.md](blog.md) |
+| Blog 文章（目前隐藏） | `_posts/` 里新建 `.md` | [blog.md](blog.md) |
 | 上线 / 排错 | — | [deploy.md](deploy.md) |
 
 **空板块会自动隐藏。** Projects、Teaching、Awards 现在是空的，所以主页上看不到它们；
 往对应的 YAML 里加第一条，板块就自己出现了。板块顺序固定为
-Bio → News → Publications → Projects → Experience → Teaching → Education → Awards。
+Bio → News → Publications → Projects → Experience → Teaching → Service → Education → Awards。
 
 ## 文件命名规矩
 

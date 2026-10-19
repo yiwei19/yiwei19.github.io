@@ -3,6 +3,10 @@
 **新建文件：** `_posts/YYYY-MM-DD-some-slug.md`
 **显示在：** https://yiwei19.github.io/blog/
 
+> **博客现在是隐藏的。** 有了第一篇真文章后，打开 `_config.yml`，删掉 `exclude:` 下面的
+> `- blog.html` 和 `- _posts` 两行，push 之后导航栏的 Blog 链接会自己出现。
+> 记得先删掉示例文章 `_posts/2026-08-29-how-this-blog-works.md`。
+
 博客文章用 Markdown 写，不碰任何 HTML。文件名里的日期决定排序，front matter 里的
 `title` 决定显示的标题。
 

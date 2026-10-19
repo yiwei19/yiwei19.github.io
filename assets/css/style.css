@@ -1,6 +1,7 @@
 /* ==========================================================================
    Yi Wei — personal site
-   Monochrome: black on white. Three typefaces:
+   Navy ink on white, one accent color (change --accent to re-theme the
+   whole site). Three typefaces:
      Inter           — structure (name, nav, section labels, list entries)
      Noto Serif SC   — Chinese Songti-style text
      Source Serif 4  — reading prose (blog posts, paper summaries)
@@ -9,11 +10,15 @@
 
 :root {
   --paper:    #ffffff;
-  --ink:      #111111;
-  --ink-soft: #3d3d3d;
-  --muted:    #767676;
-  --hair:     #dcdcdc;
-  --wash:     #f6f6f6;
+  --ink:      #16213a;   /* body text: deep navy instead of pure black */
+  --ink-soft: #3a4560;
+  --muted:    #5f6a7f;
+  --hair:     #e1e5ee;
+  --wash:     #f4f6fb;
+
+  /* Theme color. Everything colored on the site derives from these two. */
+  --accent:      #6d28d9;
+  --accent-wash: #f3effd;
 
   --ui:   "Inter", "Noto Serif SC", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   --cn:   "Noto Serif SC", "Songti SC", STSong, SimSun, serif;
@@ -51,15 +56,16 @@ a {
   text-decoration: underline;
   text-underline-offset: 2px;
   text-decoration-thickness: 1px;
-  text-decoration-color: #b9b9b9;
+  text-decoration-color: color-mix(in srgb, var(--accent) 35%, transparent);
 }
-a:hover { text-decoration-color: var(--ink); }
-a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+a:hover { color: var(--accent); text-decoration-color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 /* ==========================================================================
    Masthead / nav
    ========================================================================== */
 .masthead {
+  border-top: 3px solid var(--accent);
   border-bottom: 1px solid var(--hair);
   margin-bottom: 52px;
 }
@@ -75,7 +81,8 @@ a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 .masthead nav { display: flex; gap: 22px; font-size: 15px; }
 .masthead nav a { text-decoration: none; color: var(--ink-soft); }
 .masthead nav a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
-.masthead nav a[aria-current="page"] { color: var(--ink); font-weight: 600; }
+.masthead nav a:hover { color: var(--accent); }
+.masthead nav a[aria-current="page"] { color: var(--accent); font-weight: 600; }
 
 /* ==========================================================================
    Section rail
@@ -94,7 +101,7 @@ a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0;
-  color: var(--muted);
+  color: var(--accent);
   line-height: 1.5;
   padding-top: 3px;
 }
@@ -120,7 +127,7 @@ a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 }
 .intro h1 .cn { font-family: var(--cn); font-weight: 400; color: var(--muted); font-size: 0.72em; letter-spacing: normal; margin-left: 6px; }
 .intro .contact {
-  margin: 8px 0 18px; font-size: 14.5px; color: var(--ink-soft);
+  margin: 8px 0 18px; font-size: 14.5px; color: var(--accent);
   display: flex; flex-wrap: wrap; gap: 0 14px;
 }
 .intro p { margin: 0 0 11px; max-width: 66ch; }
@@ -136,7 +143,7 @@ a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
   margin-bottom: 9px; align-items: baseline;
 }
 .news .when {
-  color: var(--muted); font-size: 14px;
+  color: var(--accent); font-size: 14px;
   font-variant-numeric: tabular-nums; white-space: nowrap;
 }
 .news .what { max-width: 62ch; }
@@ -157,7 +164,8 @@ a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 .entry .media figcaption { font-size: 12.5px; color: var(--muted); margin-top: 7px; line-height: 1.5; }
 
 .entry .title { font-size: 17px; font-weight: 600; letter-spacing: -0.01em; margin: 0 0 3px; }
-.entry .title a { text-decoration-color: #c9c9c9; }
+.entry .title a { text-decoration: none; }
+.entry .title a:hover { text-decoration: underline; }
 .entry .byline { font-size: 14.5px; margin: 0 0 1px; }
 .entry .byline .me { font-weight: 700; }
 .entry .where { font-size: 14px; color: var(--muted); margin: 0 0 10px; }
@@ -168,26 +176,33 @@ a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 .entry .contribution {
   font-family: var(--read); font-size: 15.5px; line-height: 1.62;
   margin: 0 0 10px; max-width: 62ch;
-  padding-left: 14px; border-left: 2px solid var(--hair);
+  padding-left: 14px; border-left: 2px solid var(--accent);
 }
 .entry .contribution b { font-family: var(--ui); font-size: 14.5px; font-weight: 600; }
 
 .entry .tags { font-size: 13.5px; color: var(--muted); margin-top: 8px; }
 .entry .rowlinks { font-size: 14.5px; margin-top: 9px; display: flex; flex-wrap: wrap; gap: 0 12px; }
 
-details.pub-details { margin-top: 10px; }
-details.pub-details summary { cursor: pointer; font-size: 14px; color: var(--ink-soft); width: max-content; }
-details.pub-details summary:hover { color: var(--ink); }
-.pub-details-body { margin-top: 10px; }
-.pub-details-body .prose:last-child,
-.pub-details-body .contribution:last-child { margin-bottom: 0; }
-
-details.bib { margin-top: 10px; }
-details.bib summary { cursor: pointer; font-size: 14px; color: var(--ink-soft); width: max-content; }
-details.bib summary:hover { color: var(--ink); }
-details.bib pre {
-  background: var(--wash); padding: 13px 15px; overflow-x: auto;
-  font-family: var(--mono); font-size: 12.5px; line-height: 1.6; margin: 9px 0 0;
+/* abs / arXiv / pdf / video / bib */
+.pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.pill {
+  font: inherit; font-size: 13px; font-weight: 600; line-height: 1;
+  padding: 5px 10px; border-radius: 4px; cursor: pointer;
+  color: var(--accent); background: transparent;
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  text-decoration: none;
+}
+.pill:hover, .pill[aria-expanded="true"] {
+  color: #fff; background: var(--accent); border-color: var(--accent);
+}
+.panel {
+  margin-top: 12px; padding: 14px 16px;
+  background: var(--accent-wash); border-radius: 4px;
+}
+.panel .prose:last-child, .panel .contribution:last-child { margin-bottom: 0; }
+.panel pre {
+  margin: 0; overflow-x: auto;
+  font-family: var(--mono); font-size: 12.5px; line-height: 1.6;
 }
 
 /* ==========================================================================
@@ -255,14 +270,7 @@ details.bib pre {
 /* wide content never pushes the page sideways */
 .scroll-x { overflow-x: auto; }
 
-/* ==========================================================================
-   Footer
-   ========================================================================== */
-.sitefoot {
-  margin-top: 56px; border-top: 1px solid var(--hair);
-  padding: 20px 0 60px; color: var(--muted); font-size: 13.5px;
-}
-.sitefoot .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+main.wrap { padding-bottom: 72px; }
 
 /* ==========================================================================
    Narrow screens — the rail folds away
@@ -283,7 +291,7 @@ details.bib pre {
 }
 
 @media print {
-  .masthead nav, .sitefoot { display: none; }
+  .masthead nav { display: none; }
   body { font-size: 11pt; }
   a { text-decoration: none; }
 }

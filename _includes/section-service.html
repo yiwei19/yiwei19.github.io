@@ -1,0 +1,19 @@
+{%- if site.data.service.size > 0 -%}
+<section class="section" id="service">
+  <h2>Service</h2>
+  <div class="body">
+    <div class="cvlist">
+      {%- for s in site.data.service %}
+      <div class="item">
+        <div class="head">
+          <span class="what">{{ s.role }}</span>
+          {%- if s.year != blank %}<span class="when">{{ s.year }}</span>{% endif %}
+        </div>
+        {%- if s.venue != blank %}<div class="org">{{ s.venue }}</div>{% endif %}
+        {%- if s.detail != blank %}<p class="detail">{{ s.detail }}</p>{% endif %}
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif -%}

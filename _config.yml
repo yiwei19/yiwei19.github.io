@@ -21,6 +21,10 @@ kramdown:
 
 # Files Jekyll should not copy into the built site
 exclude:
+  # Blog is hidden until there are real posts. To turn it back on, delete
+  # these two lines; the Blog link in the nav reappears by itself.
+  - blog.html
+  - _posts
   - docs
   - README.md
   - demo_4k_original.mp4

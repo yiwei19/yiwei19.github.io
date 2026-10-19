@@ -23,8 +23,10 @@
   links:
     - label: arXiv
       url: https://arxiv.org/abs/2609.30127
-    - label: PDF
+    - label: pdf
       url: https://arxiv.org/pdf/2609.30127
+    - label: video
+      url: https://www.youtube.com/watch?v=fe9C_YY7KOQ&t=5s
   bibtex: |
     @article{bukhari2026rmfp,
       title   = {Faster Visuomotor Policy Learning on Action Manifolds via
@@ -67,10 +69,10 @@
   links:
     - label: arXiv
       url: https://arxiv.org/abs/2608.26076
-    - label: PDF
+    - label: pdf
       url: https://arxiv.org/pdf/2608.26076
     - label: video
-      url: /assets/grasp-demo.mp4
+      url: https://www.youtube.com/watch?v=hTlnZfDrh74
   bibtex: |
     @article{bukhari2026meanflowgrasp,
       title   = {Fast Generative Grasping via Lie Group-Constrained MeanFlow},
