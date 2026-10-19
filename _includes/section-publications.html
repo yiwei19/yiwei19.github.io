@@ -6,7 +6,7 @@
     {%- for pub in site.data.publications %}
     {%- assign has_media = false -%}
     {%- if pub.video != blank or pub.image != blank -%}{%- assign has_media = true -%}{%- endif -%}
-    <div class="entry{% unless has_media %} no-media{% endunless %}">
+    <div class="entry{% unless has_media %} no-media{% endunless %}{% if pub.highlight %} highlight{% endif %}">
       {%- if has_media %}
       <figure class="media" style="margin:0">
         {%- if pub.video != blank %}
@@ -23,7 +23,7 @@
       <div>
         <p class="title">{%- if pub.links and pub.links.first -%}<a href="{{ pub.links.first.url | relative_url }}">{{ pub.title }}</a>{%- else -%}{{ pub.title }}{%- endif -%}</p>
         <p class="byline">{{ pub.authors | replace: site.data.bio.name, me_bold }}</p>
-        <p class="where">{{ pub.venue }}{% if pub.year != blank %}, {{ pub.year }}{% endif %}{% if pub.status != blank %} · <span class="status">{{ pub.status }}</span>{% endif %}</p>
+        <p class="where"><b>{{ pub.venue }}</b>{% if pub.year != blank %}, {{ pub.year }}{% endif %}{% if pub.status != blank %} · <span class="status">{{ pub.status }}</span>{% endif %}</p>
         {%- assign has_abs = false -%}
         {%- if pub.summary != blank or pub.contribution != blank -%}{%- assign has_abs = true -%}{%- endif %}
         {%- if has_abs or pub.links.size > 0 or pub.bibtex != blank %}
@@ -33,6 +33,7 @@
           {%- if pub.bibtex != blank %}<button type="button" class="pill" aria-expanded="false" aria-controls="pub{{ forloop.index }}-bib">bib</button>{% endif %}
         </div>
         {%- endif %}
+        {%- if pub.tldr != blank %}<p class="tldr">{{ pub.tldr }}</p>{% endif %}
         {%- if has_abs %}
         <div class="panel" id="pub{{ forloop.index }}-abs" hidden>
           {%- if pub.summary != blank %}<p class="prose">{{ pub.summary }}</p>{% endif %}

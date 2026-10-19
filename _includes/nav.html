@@ -1,12 +1,12 @@
+{%- assign blog_page = site.pages | where: "url", "/blog/" | first %}
+{%- if blog_page %}
 <header class="masthead">
   <div class="wrap">
     <a class="wordmark" href="{{ '/' | relative_url }}">{{ site.data.bio.name }}</a>
-    {%- assign blog_page = site.pages | where: "url", "/blog/" | first %}
-    {%- if blog_page %}
     <nav>
       <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Home</a>
       <a href="{{ '/blog/' | relative_url }}"{% if page.url contains '/blog' %} aria-current="page"{% endif %}>Blog</a>
     </nav>
-    {%- endif %}
   </div>
 </header>
+{%- endif %}

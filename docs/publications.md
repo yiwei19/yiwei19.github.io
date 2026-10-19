@@ -54,6 +54,8 @@ venue、这篇论文讲什么、**你的具体贡献**、链接、BibTeX。
 | `video` | 否 | 视频缩略图（自动播放、静音、循环）。和 `image` 二选一 |
 | `poster` | 否 | 视频加载前显示的那一帧；视频放不出来时也用它兜底 |
 | `media_caption` | 否 | 缩略图下面的小字 |
+| `tldr` | 否 | 一句话亮点，显示在按钮下面，不用点开就能看到 |
+| `highlight` | 否 | 写 `true` 给这篇加浅色背景，当作代表作突出 |
 | `summary` | 否 | 论文讲什么 |
 | `contribution` | 否 | 你的贡献，带左侧竖线显示 |
 | `links` | 否 | `label` + `url` 的列表，显示成一排按钮。label 用小写：`arXiv`、`pdf`、`video`、`code`、`slides`。`abs`（展开 summary + contribution）和 `bib`（展开 BibTeX）是自动加的，不用写进 links |

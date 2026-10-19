@@ -1,12 +1,16 @@
 {%- if site.data.news.size > 0 -%}
+{%- assign news_shown = 5 -%}
 <section class="section" id="news">
   <h2>News</h2>
   <div class="body">
     <ul class="news">
       {%- for n in site.data.news %}
-      <li><span class="when">{{ n.date }}</span><span class="what">{{ n.text }}</span></li>
+      <li{% if forloop.index > news_shown %} class="more" hidden{% endif %}><span class="when">[{{ n.date }}]</span> {{ n.text }}</li>
       {%- endfor %}
     </ul>
+    {%- if site.data.news.size > news_shown %}
+    <button type="button" class="viewmore" onclick="this.previousElementSibling.querySelectorAll('li.more').forEach(function(li){li.hidden=false});this.remove()">+ view more</button>
+    {%- endif %}
   </div>
 </section>
 {%- endif -%}

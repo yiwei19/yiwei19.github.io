@@ -7,6 +7,9 @@
   authors: S. Talha Bukhari, Austin Garrett, Yi Wei, Ruiqi Ni, Zachary Kingston, Aniket Bera
   venue: arXiv preprint arXiv:2609.30127
   year: 2026
+  tldr: >
+    A visuomotor policy that generates robot actions directly on the action manifold,
+    in as few as one network evaluation.
   # TODO: add a thumbnail (image: or video:/poster:) and media_caption.
   summary: >
     Diffusion and flow-matching visuomotor policies capture multimodal action
@@ -41,6 +44,10 @@
   authors: S. Talha Bukhari, Yi Wei, Ruiqi Ni, Zachary Kingston, Aniket Bera
   venue: arXiv preprint arXiv:2608.26076
   year: 2026
+  highlight: true          # soft accent background, like a featured paper
+  tldr: >
+    Reliable grasps in five network evaluations or fewer, up to 39× faster than
+    diffusion-based grasp generators, deployed on a real Franka arm.
   # Thumbnail: a video (autoplays, loops, muted) or an image. Use one.
   video: /assets/grasp-demo.mp4
   poster: /assets/grasp-demo-poster.jpg
