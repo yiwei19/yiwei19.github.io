@@ -97,7 +97,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .intro .contact { text-align: center; margin-top: 16px; }
 .intro .contact .sep { color: var(--muted); margin: 0 2px; }
 .intro .portrait img {
-  width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: 53% 45%;
+  width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: 50% 30%;
   display: block; border-radius: 6px; background: var(--wash);
 }
 
