@@ -8,7 +8,9 @@ title: Yi Wei
 tagline: Undergraduate researcher in embodied AI and robot learning at Purdue University.
 url: https://yiwei19.github.io
 baseurl: ""
-social_image: /assets/linkedin-preview.png
+# Link-preview image (LinkedIn, Slack, X): a 1200x627 screenshot of the top of
+# the homepage. Retake it after big changes to the intro.
+social_image: /assets/social-preview.png
 
 # Blog post URLs → /blog/2026/08/29/some-title/
 permalink: /blog/:year/:month/:day/:title/
