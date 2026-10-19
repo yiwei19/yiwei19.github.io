@@ -44,7 +44,6 @@
   authors: S. Talha Bukhari, Yi Wei, Ruiqi Ni, Zachary Kingston, Aniket Bera
   venue: arXiv preprint arXiv:2608.26076
   year: 2026
-  highlight: true          # soft accent background, like a featured paper
   tldr: >
     Reliable grasps in five network evaluations or fewer, up to 39× faster than
     diffusion-based grasp generators, deployed on a real Franka arm.
