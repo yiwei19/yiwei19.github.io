@@ -82,11 +82,11 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
    Intro: name + bio on the left, photo on the right
    ========================================================================== */
 .intro {
-  display: grid; grid-template-columns: 1fr 210px; gap: 36px;
+  display: grid; grid-template-columns: 210px 1fr; gap: 36px;
   align-items: start; padding-bottom: 18px;
 }
 .intro h1 {
-  margin: 4px 0 18px; text-align: center;
+  margin: 0 0 14px;
   font-size: 32px; font-weight: 400; line-height: 1.2;
 }
 .intro h1 .cn { font-family: var(--cn); font-weight: 400; color: var(--muted); font-size: 0.7em; letter-spacing: normal; margin-left: 8px; }
@@ -94,8 +94,9 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .intro p.muted { color: var(--muted); }
 .intro p b { font-weight: 700; }
 .intro p a b { color: var(--accent); }
-.intro .contact { text-align: center; margin-top: 16px; }
+.intro .contact { margin-top: 16px; }
 .intro .contact .sep { color: var(--muted); margin: 0 2px; }
+.intro .portrait { order: -1; }
 .intro .portrait img {
   width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: 50% 30%;
   display: block; border-radius: 6px; background: var(--wash);
@@ -243,7 +244,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
    ========================================================================== */
 @media (max-width: 720px) {
   .intro { grid-template-columns: 1fr; gap: 16px; }
-  .intro .portrait { order: -1; width: 160px; margin: 0 auto; }
+  .intro .portrait { width: 160px; margin: 0 auto; }
+  .intro h1, .intro .contact { text-align: center; }
   .entry { grid-template-columns: 1fr; gap: 14px; }
   .entry .media { max-width: 420px; }
   .cvlist .item.has-logo { grid-template-columns: 48px 1fr; gap: 14px; }
