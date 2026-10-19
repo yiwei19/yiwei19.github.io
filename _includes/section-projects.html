@@ -12,7 +12,7 @@
       {%- endif %}
       <div>
         <p class="title">{{ pr.title }}</p>
-        <p class="where">{% if pr.org != blank %}{{ pr.org }}{% endif %}{% if pr.period != blank %} · {{ pr.period }}{% endif %}{% if pr.status != blank %} · <span class="status">{{ pr.status }}</span>{% endif %}</p>
+        <p class="where">{% if pr.org != blank %}{{ pr.org }}{% endif %}{% if pr.period != blank %} · {{ pr.period }}{% endif %}{% if pr.status %} · <span class="status">{{ pr.status }}</span>{% endif %}</p>
         {%- if pr.summary != blank %}<p class="prose">{{ pr.summary }}</p>{% endif %}
         {%- if pr.contribution != blank %}<p class="contribution"><b>My contribution:</b> {{ pr.contribution }}</p>{% endif %}
         {%- if pr.tags != blank %}<p class="tags">{{ pr.tags }}</p>{% endif %}
