@@ -2,10 +2,15 @@
 # Newest first. Guide: docs/news.md
 # ---------------------------------------------------------------------------
 
+- date: "09/2026"
+  text: >
+    Our paper <i>Faster Visuomotor Policy Learning on Action Manifolds via Riemannian
+    MeanFlow</i> is on <a href="https://arxiv.org/abs/2609.30127">arXiv</a>.
+
 - date: "08/2026"
   text: >
     Our paper <i>Fast Generative Grasping via Lie Group-Constrained MeanFlow</i>
     is on <a href="https://arxiv.org/abs/2608.26076">arXiv</a>.
 
 - date: "2026"
-  text: Joined the CoMMA Lab at Purdue as a first-year undergraduate researcher.
+  text: Joined the CoMMA Lab at Purdue University.

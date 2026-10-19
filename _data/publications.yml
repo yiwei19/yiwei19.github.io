@@ -3,6 +3,38 @@
 # `me: Yi Wei` in authors is bolded automatically.
 # ---------------------------------------------------------------------------
 
+- title: Faster Visuomotor Policy Learning on Action Manifolds via Riemannian MeanFlow
+  authors: S. Talha Bukhari, Austin Garrett, Yi Wei, Ruiqi Ni, Zachary Kingston, Aniket Bera
+  venue: arXiv preprint arXiv:2609.30127
+  year: 2026
+  # TODO: add a thumbnail (image: or video:/poster:) and media_caption.
+  summary: >
+    Diffusion and flow-matching visuomotor policies capture multimodal action
+    distributions, but their multi-step sampling is too slow for fast control, and
+    robot actions often live on a curved manifold that the policy has to respect. We
+    present Riemannian MeanFlow Policy (RMFP), which learns the conditioned flow map
+    of the probability path on the robot action manifold, trained with a flow-map
+    consistency objective anchored by Riemannian Conditional Flow Matching. RMFP
+    generates on-manifold action sequences in as few as <b>one network evaluation</b>,
+    is competitive with prior work at lower sampling cost on spherical LASA, Push-T,
+    Robomimic (Tool Hang, Transport), and Franka Kitchen, and runs on a real robot
+    under imperfect sensing.
+  # TODO: add `contribution:` describing your part of this work.
+  links:
+    - label: arXiv
+      url: https://arxiv.org/abs/2609.30127
+    - label: PDF
+      url: https://arxiv.org/pdf/2609.30127
+  bibtex: |
+    @article{bukhari2026rmfp,
+      title   = {Faster Visuomotor Policy Learning on Action Manifolds via
+                 Riemannian MeanFlow},
+      author  = {Bukhari, S. Talha and Garrett, Austin and Wei, Yi and
+                 Ni, Ruiqi and Kingston, Zachary and Bera, Aniket},
+      journal = {arXiv preprint arXiv:2609.30127},
+      year    = {2026}
+    }
+
 - title: Fast Generative Grasping via Lie Group-Constrained MeanFlow
   authors: S. Talha Bukhari, Yi Wei, Ruiqi Ni, Zachary Kingston, Aniket Bera
   venue: arXiv preprint arXiv:2608.26076

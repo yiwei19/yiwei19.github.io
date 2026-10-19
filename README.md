@@ -1,20 +1,20 @@
 # Yi Wei — Personal Website
 
-线上地址：https://yiwei19.github.io
+Live at: https://yiwei19.github.io
 
-学术主页 + 博客。GitHub Pages 自带的 Jekyll 负责构建 —— **本地不需要装任何东西**，
-push 上去 1–2 分钟后自动生效。
+Academic homepage + blog. GitHub Pages builds it with its built-in Jekyll, so
+**nothing needs to be installed locally**. Changes go live 1–2 minutes after a push.
 
-## 怎么更新
+## How to update
 
-**内容和外观是分开的。** 日常只改 `_data/` 里的 YAML 和 `_posts/` 里的 Markdown，
-不用碰 HTML 和 CSS。
+**Content and appearance are kept separate.** Day to day, you only edit the YAML in
+`_data/` and the Markdown in `_posts/`; there's no need to touch HTML or CSS.
 
-👉 **[docs/README.md](docs/README.md) 是所有更新指南的入口**，每个板块一份。
+👉 **[docs/README.md](docs/README.md) is the entry point for all update guides**, one per section.
 
-| 板块 | 改哪个文件 |
+| Section | File to edit |
 |---|---|
-| 头像 / 姓名 / 联系方式 / 自我介绍 | `_data/bio.yml` |
+| Photo / name / contact / bio | `_data/bio.yml` |
 | News | `_data/news.yml` |
 | Publications | `_data/publications.yml` |
 | Projects | `_data/projects.yml` |
@@ -22,39 +22,39 @@ push 上去 1–2 分钟后自动生效。
 | Teaching | `_data/teaching.yml` |
 | Education | `_data/education.yml` |
 | Awards & Honors | `_data/awards.yml` |
-| 博客文章 | `_posts/` 里新建 `.md` |
+| Blog posts | new `.md` file in `_posts/` |
 
-空的板块会自动从主页上隐藏。
+Empty sections are hidden from the homepage automatically.
 
-## 目录结构
+## Directory layout
 
 ```
-_config.yml           站点设置
-_data/                所有内容（← 你日常改这里）
-_posts/               博客文章（Markdown）
-_layouts/             页面骨架
-_includes/            每个板块的 HTML 模板
-assets/               图片、视频、CV
-  css/style.css       全站样式
-docs/                 更新指南（← 从这里开始看）
-index.html            主页（只有一行 front matter，内容都来自 _data/）
-blog.html             博客列表页
+_config.yml           site settings
+_data/                all content (← edit here day to day)
+_posts/               blog posts (Markdown)
+_layouts/             page skeletons
+_includes/            HTML template for each section
+assets/               images, videos, resume
+  css/style.css       site-wide styles
+docs/                 update guides (← start here)
+index.html            homepage (front matter only; all content comes from _data/)
+blog.html             blog index page
 ```
 
-## 发布
+## Publishing
 
 ```bash
 cd ~/Documents/career/website
 git add -A
-git commit -m "写清楚改了什么"
+git commit -m "Describe what changed"
 git push
 ```
 
-排错见 [docs/deploy.md](docs/deploy.md)。
+For troubleshooting, see [docs/deploy.md](docs/deploy.md).
 
-## 待办
+## To do
 
-- [ ] 补 `assets/Yi_Wei_CV.pdf`，然后在 `_data/bio.yml` 里取消注释 CV 链接
-- [ ] 删掉示例博客文章 `_posts/2026-08-29-how-this-blog-works.md`，换成真的第一篇
-- [ ] model-based RL / 约束搜索空间方向有产出后，填 `_data/projects.yml`
-- [ ] 简历页眉加一行网站地址
+- [x] Add the resume PDF (`assets/Yi_Wei_Resume.pdf`) and link it from `_data/bio.yml`
+- [ ] Delete the sample post `_posts/2026-08-29-how-this-blog-works.md` and replace it with a real first post
+- [ ] Fill in `_data/projects.yml` once the model-based RL / constrained search space work has results
+- [ ] Add the website URL to the resume header

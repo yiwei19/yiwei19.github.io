@@ -17,8 +17,8 @@ links:
     url: https://github.com/yiwei19
   - label: LinkedIn
     url: https://www.linkedin.com/in/yiwei19
-  # - label: CV
-  #   url: /assets/Yi_Wei_CV.pdf
+  - label: Resume
+    url: /assets/Yi_Wei_Resume.pdf
   # - label: Google Scholar
   #   url: https://scholar.google.com/citations?user=XXXX
 

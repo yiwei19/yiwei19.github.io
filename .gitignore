@@ -14,3 +14,6 @@ vendor/
 /*.mp4
 *.bak
 _to_delete/
+
+# working notes, not site content
+linkedin-update.md
