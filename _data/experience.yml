@@ -4,6 +4,7 @@
 # ---------------------------------------------------------------------------
 
 - role: Undergraduate Researcher
+  logo: /assets/logos/comma-lab.png
   org: Computational Motion, Manipulation, and Autonomy (CoMMA) Lab, Purdue University
   period: 2026–present
   location: West Lafayette, IN

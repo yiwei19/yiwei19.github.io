@@ -4,5 +4,6 @@
 # ---------------------------------------------------------------------------
 
 - role: Reviewer
+  logo: /assets/logos/icra.png
   venue: IEEE International Conference on Robotics and Automation (ICRA)
   year: "2027"

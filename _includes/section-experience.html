@@ -4,13 +4,16 @@
   <div class="body">
     <div class="cvlist">
       {%- for e in site.data.experience %}
-      <div class="item">
+      <div class="item{% if e.logo != blank %} has-logo{% endif %}">
+        {%- if e.logo != blank %}<div class="logo"><img src="{{ e.logo | relative_url }}" alt="" loading="lazy"></div>{% endif %}
+        <div class="text">
         <div class="head">
           <span class="what">{{ e.role }}</span>
           {%- if e.period != blank %}<span class="when">{{ e.period }}</span>{% endif %}
         </div>
         <div class="org">{{ e.org }}{% if e.location != blank %} · {{ e.location }}{% endif %}</div>
         {%- if e.detail != blank %}<p class="detail">{{ e.detail }}</p>{% endif %}
+        </div>
       </div>
       {%- endfor %}
     </div>

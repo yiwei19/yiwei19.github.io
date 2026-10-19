@@ -73,3 +73,16 @@ git push
 
 等 1–2 分钟，刷新 https://yiwei19.github.io（Cmd+Shift+R 强制刷新）。
 出问题看 [deploy.md](deploy.md)。
+
+## Logo（Experience / Service / Education / Teaching / Awards）
+
+这几个板块的每一条都可以加一个 `logo:`，显示在左边（实验室、学校、会议的标志）：
+
+```yaml
+- role: Undergraduate Researcher
+  logo: /assets/logos/comma-lab.png
+  org: ...
+```
+
+图片放 `assets/logos/`，文件名小写加连字符。透明底或白底的 PNG 最好；宽图和方图都行，
+会自动缩放到 120×64 以内。不写 `logo` 就是纯文字。

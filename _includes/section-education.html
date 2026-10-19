@@ -4,7 +4,9 @@
   <div class="body">
     <div class="cvlist">
       {%- for ed in site.data.education %}
-      <div class="item">
+      <div class="item{% if ed.logo != blank %} has-logo{% endif %}">
+        {%- if ed.logo != blank %}<div class="logo"><img src="{{ ed.logo | relative_url }}" alt="" loading="lazy"></div>{% endif %}
+        <div class="text">
         <div class="head">
           <span class="what">{{ ed.school }}</span>
           {%- if ed.location != blank %}<span class="when">{{ ed.location }}</span>{% endif %}
@@ -16,6 +18,7 @@
         </div>
         {%- endif %}
         {%- if ed.detail != blank %}<p class="detail">{{ ed.detail }}</p>{% endif %}
+        </div>
       </div>
       {%- endfor %}
     </div>
