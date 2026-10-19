@@ -10,7 +10,11 @@
   tldr: >
     A visuomotor policy that generates robot actions directly on the action manifold,
     in as few as one network evaluation.
-  # TODO: add a thumbnail (image: or video:/poster:) and media_caption.
+  video: /assets/rmfp-demo.mp4
+  poster: /assets/rmfp-demo-poster.jpg
+  media_caption: >
+    Real-world deployment on an I2RT YAM arm with on-board inference on an NVIDIA
+    Jetson Thor, one network evaluation per action chunk. Shown at 2× speed.
   summary: >
     Diffusion and flow-matching visuomotor policies capture multimodal action
     distributions, but their multi-step sampling is too slow for fast control, and
