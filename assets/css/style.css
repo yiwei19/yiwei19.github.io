@@ -4,7 +4,8 @@
    headings above their content. Navy ink on white with one accent color
    (change --accent to re-theme the whole site). Three typefaces:
      Lato            — everything on the homepage
-     Noto Serif SC   — Chinese Songti-style text
+     LXGW WenKai     — Chinese name (Kai style; only its characters are loaded)
+     Noto Serif SC   — any other Chinese text
      Source Serif 4  — blog post body text
    ========================================================================== */
 
@@ -21,7 +22,7 @@
   --accent-wash: #f5f1fe;
 
   --ui:   "Lato", "Noto Serif SC", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  --cn:   "Noto Serif SC", "Songti SC", STSong, SimSun, serif;
+  --cn:   "LXGW WenKai TC", "Kaiti SC", STKaiti, KaiTi, serif;
   --read: "Source Serif 4", "Noto Serif SC", Georgia, "Times New Roman", serif;
   --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 
